@@ -1,0 +1,45 @@
+---
+title: San Francisco Book Store Guide - About
+canonical: https://bookstore.guide/about/
+description: About bookstore.guide - a guide to San Francisco book sellers.
+layout: 'base'
+---
+
+<style>
+  .small-text {
+    font-size: 0.85rem;
+  }
+</style>
+
+<h1>About</h1>
+
+<div class="content">
+  <h2 className="mt-0">What</h2>
+  <p>
+    San Francisco Book Store Guide is a guide to San Francisco book sellers: where to buy new &amp;
+    used books, what bookstores are open right now, what bookstores are also wine bars (spoiler:
+    it&apos;s only <a href="/store/golden-sardine/">Golden Sardine</a>). Coming soon: by appointment
+    bookstores, comic book stores that carry graphic novels, and likely some other places that
+    aren&apos;t bookstores but carry books. Not coming soon: college bookstores or religious
+    bookstores. If you see something wrong or missing, please email
+    <a href="mailto:pete@bookstore.guide">Pete</a>.
+  </p>
+
+  <h2>Who</h2>
+  <p>
+    San Francisco Book Store Guide is built by
+    <a href="https://pete.vonpetrin.com">Pete von Petrin</a>.
+  </p>
+  <h2>How</h2>
+  <p>
+    This site is lovingly hand-coded using 11ty &amp; WebC. On the back end there is also
+    TypeScript, React (Next.js) with Tailwind and DaisyUI, Node and Express with Prisma and MySQL.
+  </p>
+  <h2>Privacy</h2>
+  <p>
+    No personally identifiable information is tracked. We do not set cookies. We track some events
+    using the third-party service Goat Counter.
+  </p>
+  <div class="small-text">This page last updated July 17, 2024</div>
+</div>
+<site-footer current="About" webc:nokeep></site-footer>

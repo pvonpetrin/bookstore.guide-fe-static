@@ -1,0 +1,11 @@
+<style>
+  .nav a {
+    color: rgba(30, 39, 52, 0.8);
+    font-weight: 800;
+  }
+</style>
+<div class="nav">
+  <a href="/" webc:if="current !== 'Home'">Home</a>
+  <span webc:if="current !== 'Home' && current !== 'About'" webc:nokeep>-</span>
+  <a href="/about" webc:if="current !== 'About'">About</a>
+</div>

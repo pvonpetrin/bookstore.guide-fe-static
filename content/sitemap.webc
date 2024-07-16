@@ -1,0 +1,10 @@
+---
+permalink: 'sitemap.xml'
+eleventyExcludeFromCollections: true
+---
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  ><url webc:for="k, v in collections.all"
+    ><loc @text="'https://bookstore.guide' + v.url"></loc
+    ><lastmod @text="v.date.toISOString()"></lastmod></url
+></urlset>

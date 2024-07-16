@@ -1,0 +1,58 @@
+---
+title: San Francisco Book Store Guide
+canonical: https://bookstore.guide/
+description: Your guide to San Francisco book sellers with descriptions, hours, and contact information.
+layout: 'base'
+---
+
+<style>
+  hgroup p {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    margin-bottom: -0.75rem;
+  }
+
+  hgroup h1 {
+    margin: 0;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    hgroup h1 {
+      font-size: 3.75rem;
+      line-height: 1;
+    }
+  }
+
+  .name-link {
+    color: oklch(0.270224 0.027505 257.526);
+    font-size: 1.125em;
+    font-weight: 500;
+    margin-bottom: 0px;
+  }
+  .container {
+    max-width: 56rem;
+    column-gap: 1rem;
+    display: grid;
+  }
+  @media (min-width: 1024px) {
+    .container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>
+<hgroup>
+  <p>San Francisco</p>
+  <h1>Bookstore Guide</h1>
+</hgroup>
+<div class="container">
+  <div webc:for="store of stores" class="content">
+    <a :href="`/store/${store.slug}`" @html="store.name" class="name-link"></a>
+    <store-listing :store="store" short></store-listing>
+  </div>
+</div>
+<site-footer current="Home" webc:nokeep></site-footer>

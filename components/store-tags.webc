@@ -1,0 +1,19 @@
+<style>
+  div.tags {
+    margin-top: 0.5rem;
+  }
+  div.tag {
+    background-color: oklch(0.909962 0.008747 17.3174);
+    display: inline;
+    border: 1px solid oklch(0.144788 0 0);
+    padding: 1px 4px;
+    height: 1.25rem;
+    font-size: 0.875rem;
+    margin: 0;
+    box-sizing: border-box;
+    color: oklch(0 0 0);
+  }
+</style>
+<div class="tags">
+  <div class="tag" webc:for="tag of store.traits" @text="tag.name"></div>
+</div>

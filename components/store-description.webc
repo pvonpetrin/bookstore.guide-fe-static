@@ -1,0 +1,16 @@
+<script webc:setup>
+  function renderStoreDescription(store, useShortDescription) {
+    const description = store.description !== undefined ? store.description : '';
+    const longDescription =
+      store.longDescription !== undefined && store.longDescription !== null
+        ? store.longDescription
+        : '';
+    if (longDescription?.length === 0 || useShortDescription) {
+      return description;
+    }
+
+    return markdownit.render(longDescription);
+  }
+</script>
+
+<div @html="renderStoreDescription(store, short)" webc:nokeep></div>

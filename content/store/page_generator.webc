@@ -1,0 +1,41 @@
+---js 
+{
+  pagination: { 
+    data: "stores", 
+    size: 1,
+    alias: "store",
+    addAllPagesToCollections: true
+  }, 
+  permalink: function(data) { 
+    const { store } = data; 
+    return `store/${store.slug}/`; 
+  }, 
+  layout: "base",
+  eleventyComputed: {
+     title: function(data) { 
+      const { store } = data; 
+      return `${store.name} at the San Francisco Bookstore Guide`; 
+    }, 
+
+    description: function(data) { 
+      const { store } = data; 
+      const description =
+      store.description && store.description.length > 25
+      ? `${store.description}`
+      : `${store.name} at bookstore.guide, your directory of San Francisco book sellers.`;
+      return description; 
+    },
+    canonical: function(data) { 
+      const { store } = data; 
+      return `https://bookstore.guide/store/${store.slug}/`; 
+    },
+  },
+}  
+---
+
+<h1 @html="store.name"></h1>
+<div class="content">
+  <store-listing :store="store" address-class:""></store-listing>
+  <store-tags :store="store" webc:nokeep></store-tags>
+</div>
+<site-footer webc:nokeep></site-footer>

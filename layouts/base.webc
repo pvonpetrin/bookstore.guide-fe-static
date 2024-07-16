@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" class="fonts">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" :href="getBundleFileUrl('css')" webc:keep />
+    <title @html="title"></title>
+    <meta name="description" :content="description" />
+    <link rel="canonical" :href="canonical" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32" />
+  </head>
+  <body>
+    <main @html="layoutContent"></main>
+  </body>
+</html>
