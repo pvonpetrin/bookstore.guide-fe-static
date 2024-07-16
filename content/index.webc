@@ -1,6 +1,6 @@
 ---
 title: San Francisco Book Store Guide
-canonical: https://bookstore.guide/
+canonical: https://bookstore.guide
 description: Your guide to San Francisco book sellers with descriptions, hours, and contact information.
 layout: 'base'
 ---
@@ -34,13 +34,15 @@ layout: 'base'
     font-weight: 500;
     margin-bottom: 0px;
   }
+
   .container {
-    max-width: 56rem;
     column-gap: 1rem;
     display: grid;
+    max-width: 96vw;
   }
   @media (min-width: 1024px) {
     .container {
+      max-width: 56rem;
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }

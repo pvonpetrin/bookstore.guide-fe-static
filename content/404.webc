@@ -1,6 +1,22 @@
 ---
 title: Error Four Hundred Four
 permalink: 404.html
+layout: 'base'
+sitemapIgnore: true
+eleventyExcludeFromCollections: true
 ---
 
-not founds
+<style>
+  div.fof {
+    text-align: center;
+  }
+  .fof h1,
+  .fof h2 {
+    display: block;
+  }
+</style>
+
+<div class="fof">
+  <h1>404</h1>
+  <h2>This page could not be found.</h2>
+</div>

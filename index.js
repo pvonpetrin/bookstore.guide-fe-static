@@ -10,6 +10,7 @@ const request = require('request');
 
 const goatToken = process.env.GOAT_TOKEN;
 const goatSite = process.env.GOAT_SITE;
+const blockTracking = process.env.BLOCK_TRACKING !== undefined;
 
 app.use(
   cors({
@@ -40,19 +41,28 @@ app.get('/rebuild', ClerkExpressRequireAuth(), (req, res) => {
 app.use(function (req, res, next) {
   const filename = path.basename(req.url);
   const extension = path.extname(filename);
-  if (extension === '') {
+  if (extension === '' && !blockTracking) {
     const req_path = '/' + filename;
-    console.log(req.url, req_path);
     request.post({
-      url: `https://${goatSite}.goatcounter.com/api/v0/`,
-      json: { no_sessions: true, hits: [{ path: req_path }] },
-
+      url: `https://${goatSite}.goatcounter.com/api/v0/count`,
+      json: {
+        no_sessions: false,
+        hits: [
+          {
+            path: req_path,
+            ip: req.ip,
+            ref: req.get('Referrer'),
+            user_agent: req.get('User-Agent')
+          }
+        ]
+      },
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${goatToken}`
       }
     });
   }
+
   next();
 });
 

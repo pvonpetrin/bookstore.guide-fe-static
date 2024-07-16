@@ -37,8 +37,9 @@ layout: 'base'
   </p>
   <h2>Privacy</h2>
   <p>
-    No personally identifiable information is tracked. We do not set cookies. We track some events
-    using the third-party service Goat Counter.
+    No personally identifiable information is tracked. We do not set cookies. We track page views
+    using the third-party service Goat Counter, which de-identifies personally identifiable
+    information.
   </p>
   <div class="small-text">This page last updated July 17, 2024</div>
 </div>

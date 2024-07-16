@@ -8,11 +8,12 @@
   <span @html="store.address1" webc:nokeep></span><br />
   <span @html="store.address2" webc:nokeep></span><br webc:if="store.address2 !== null" />
   San Francisco, CA <span @html="store.zip5" webc:nokeep></span><br />
-  <a :href="`tel:${store.phone}`" @html="store.phone"></a><br webc:if="store.phone !== null" />
+  <a :href="`tel:${store.phone}`" @html="store.phone" webc:if="store.phone !== null"></a
+  ><br webc:if="store.phone !== null" />
   <span @html="store.hoursText" webc:nokeep></span>
 </p>
 
-<p class="small-text">
+<p class="small-text" webc:if="store.url !== null">
   <a :href="store.url" @html="store.url" class="external-link"></a>
 </p>
 <store-description :store="store" :short="booleanize(short)"></store-description>
