@@ -20,24 +20,6 @@ app.use(
   })
 );
 
-/** dynamic URLs go before use static  */
-app.get('/rebuild', ClerkExpressRequireAuth(), (req, res) => {
-  let child = exec('npm run build');
-
-  child.stdout.on('data', function (data) {
-    console.log('rebuild: stdout: ' + data);
-  });
-
-  child.stderr.on('data', function (data) {
-    console.log('rebuild: stderr: ' + data);
-  });
-
-  child.on('close', function (code) {
-    console.log('rebuild: child process exited with code ' + code);
-    res.send('rebuild complete');
-  });
-});
-
 app.use(function (req, res, next) {
   const filename = path.basename(req.url);
   const extension = path.extname(filename);
