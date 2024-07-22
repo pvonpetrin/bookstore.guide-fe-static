@@ -19,4 +19,4 @@ I needed this for server-side analytics tracking. Added an Express server at the
 Relative paths mean that these folders can live where you like, but this was not obvious from the documentation. See: `eleventy.config.js`
 
 **Markdown in API content**
-My site data may include Markdown in one field. While 11ty is great at converting Markdown files to HTML, I needed to expose access to the markdown-it library (used imported as a dependency by 11ty) for use in template functions. See: `eleventy.config.js` and `components/store-description.webc`
+My site data may include Markdown in one field. While 11ty is great at converting Markdown files to HTML, I needed to expose access to the markdown-it library (already imported as a dependency by 11ty) for use in template functions. See: `eleventy.config.js` and `components/store-description.webc`
