@@ -1,24 +1,16 @@
 require('dotenv').config();
+
 const express = require('express');
-const app = express();
-const port = process.env.PORT;
-const { exec } = require('child_process');
-const { ClerkExpressRequireAuth } = require('@clerk/clerk-sdk-node');
-const cors = require('cors');
 const path = require('path');
 const request = require('request');
 
+const app = express();
+const port = process.env.PORT;
+
+// GoatCounter
 const goatToken = process.env.GOAT_TOKEN;
 const goatSite = process.env.GOAT_SITE;
 const blockTracking = process.env.BLOCK_TRACKING !== undefined;
-
-app.use(
-  cors({
-    origin: '*',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    optionsSuccessStatus: 200
-  })
-);
 
 app.use(function (req, res, next) {
   const filename = path.basename(req.url);
@@ -47,14 +39,15 @@ app.use(function (req, res, next) {
 
   next();
 });
+// end GoatCounter
 
 app.use(express.static('public'));
 
-// catch-all when static fails
+// catch-all when static path not found
 app.use(function (req, res) {
-  res.sendFile(__dirname + '/public/404.html');
+  res.sendStatus(404);
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Listening on port ${port}`);
 });

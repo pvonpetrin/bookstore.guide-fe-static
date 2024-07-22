@@ -14,9 +14,13 @@ eleventyExcludeFromCollections: true
   .fof h2 {
     display: block;
   }
+  .fof .nav {
+    margin-top: 2em;
+  }
 </style>
 
 <div class="fof">
   <h1>404</h1>
   <h2>This page could not be found.</h2>
+  <site-footer webc:nokeep></site-footer>
 </div>
