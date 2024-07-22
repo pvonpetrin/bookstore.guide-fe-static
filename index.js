@@ -2,7 +2,6 @@ require('dotenv').config();
 
 const express = require('express');
 const path = require('path');
-const request = require('request');
 
 const app = express();
 const port = process.env.PORT;
@@ -12,14 +11,14 @@ const goatToken = process.env.GOAT_TOKEN;
 const goatSite = process.env.GOAT_SITE;
 const blockTracking = process.env.BLOCK_TRACKING !== undefined;
 
-app.use(function (req, res, next) {
+app.use(async function (req, res, next) {
   const filename = path.basename(req.url);
   const extension = path.extname(filename);
   if (extension === '' && !blockTracking) {
     const req_path = '/' + filename;
-    request.post({
-      url: `https://${goatSite}.goatcounter.com/api/v0/count`,
-      json: {
+    await fetch(`https://${goatSite}.goatcounter.com/api/v0/count`, {
+      method: 'POST',
+      body: JSON.stringify({
         no_sessions: false,
         hits: [
           {
@@ -29,7 +28,7 @@ app.use(function (req, res, next) {
             user_agent: req.get('User-Agent')
           }
         ]
-      },
+      }),
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${goatToken}`
