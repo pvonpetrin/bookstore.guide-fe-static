@@ -1,5 +1,6 @@
 const markdownit = require('markdown-it');
 const pluginWebc = require('@11ty/eleventy-plugin-webc');
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./content/robots.txt');
   eleventyConfig.addPassthroughCopy('./content/favicon.ico');
