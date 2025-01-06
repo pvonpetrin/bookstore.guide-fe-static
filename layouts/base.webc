@@ -11,6 +11,6 @@
     <title @html="title"></title>
   </head>
   <body>
-    <main @html="layoutContent"></main>
+    <main @html="content"></main>
   </body>
 </html>

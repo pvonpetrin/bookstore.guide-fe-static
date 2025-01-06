@@ -52,7 +52,7 @@ layout: 'base'
   <h1>Bookstore Guide</h1>
 </hgroup>
 <div class="container">
-  <div webc:for="store in stores" class="content">
+  <div webc:for="store of stores" class="content">
     <a :href="`/store/${store.slug}`" @html="store.name" class="name-link"></a>
     <store-listing :store="store" short></store-listing>
   </div>
