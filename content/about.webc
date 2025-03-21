@@ -16,12 +16,8 @@ layout: 'base'
 <div class="content">
   <h2 className="mt-0">What</h2>
   <p>
-    San Francisco Book Store Guide is a guide to San Francisco book sellers: where to buy new &amp;
-    used books, what bookstores are open right now, what bookstores are also wine bars (spoiler:
-    it&apos;s only <a href="/store/golden-sardine/">Golden Sardine</a>). Coming soon: by appointment
-    bookstores, comic book stores that carry graphic novels, and likely some other places that
-    aren&apos;t bookstores but carry books. Not coming soon: college bookstores or religious
-    bookstores. If you see something wrong or missing, please email
+    San Francisco Book Store Guide is a guide to San Francisco book sellers. If you see something
+    wrong or missing, please email
     <a href="mailto:pete@bookstore.guide">Pete</a>.
   </p>
 
@@ -41,6 +37,6 @@ layout: 'base'
     using the third-party service Goat Counter, which de-identifies personally identifiable
     information.
   </p>
-  <div class="small-text">This page last updated July 17, 2024</div>
+  <div class="small-text">This page last updated March 21, 2025</div>
 </div>
 <site-footer current="About" webc:nokeep></site-footer>
