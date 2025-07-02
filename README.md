@@ -1,5 +1,7 @@
 # Bookstore Guide
 
+## Migrated to Astro - this codebase is no longer maintianed as of 7/2/25
+
 An API driven 11ty site with a built in Express server. Uses dotenv for environment variables. Uses GoatCounter for analytics. Templates and components in WebC. Zero Javascript is served to site visitors. There are additional codebases for the content API and a content management UI which are not public.
 
 [Live site](https://bookstore.guide)
