@@ -2,7 +2,7 @@
 
 ## Migrated to Astro - this codebase is no longer maintianed as of 7/2/25
 
-[Astro codebase](https://github.com/pvonpetrin/bsg-astro)
+[Astro codebase](https://github.com/bookstore-guide/bsg-astro)
 
 An API driven 11ty site with a built in Express server. Uses dotenv for environment variables. Uses GoatCounter for analytics. Templates and components in WebC. Zero Javascript is served to site visitors. There are additional codebases for the content API and a content management UI which are not public.
 
